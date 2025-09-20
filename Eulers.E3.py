@@ -42,7 +42,6 @@ for a in dt:
     x_vals, t_vals = func(x0, y0, t0, t_max, a)
     ax[0].plot(t_vals, x_vals, label="Euler dt={a}")
 
-
 ax[0].set_title("Euler's aproximation")
 ax[0].set_xlabel("time(s)")
 ax[0].set_ylabel("x(t)")     
