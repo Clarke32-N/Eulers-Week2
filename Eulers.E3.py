@@ -4,9 +4,9 @@ import matplotlib.pyplot as plt
 t0 = 0
 x0 = 0.000001
 y0 = 1
-t_max = 35
+t_max = 50
 dt = ([0.05, 0.025, 0.0125, 0.00626, 0.005])
-
+fig, ax = plt.subplots(1,2)
 
 
 def func(x0, y0, t0, t_max, dt):
@@ -37,16 +37,18 @@ def sine(x,t):
 x_calc, t_calc = sine(x0, t0)
 
 
-fig, ax = plt.subplots(1,2)
+
 for a in dt:
     x_vals, t_vals = func(x0, y0, t0, t_max, a)
-    ax[0].plot(t_vals, x_vals, label="Euler dt={a}")
-
+    ax[0].plot(t_vals, x_vals, label=f"dt={a}")
+   # ax[1].plot(t_vals, (x_vals-x_calc, label=f"dt={a}"))
 ax[0].set_title("Euler's aproximation")
 ax[0].set_xlabel("time(s)")
 ax[0].set_ylabel("x(t)")     
+ax[0].plot(t_calc, x_calc,'k--', label="Exact Solution")
+ax[0].legend()
 
-ax[1].plot(t_calc, x_calc)
+
 plt.show()
 
 

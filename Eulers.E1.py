@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 #Initial Conditions
-dt = 0.5         
+dt = 0.01         
 tmax = 10        
 tau = 2.0        
 t0 = 0           
@@ -35,7 +35,7 @@ true_N = N0 * np.exp((-t_values)/tau)
 error = np.abs(true_N - N_values)
 
 #Graph 1
-fig, axs = plt.subplots(2,1)
+fig, axs = plt.subplots(1,2)
 axs[0].plot(t_values, N_values, label="Euler's Approximation", color="black",linestyle="--")
 axs[0].plot(t_values, true_N, label="Exact Values", color="black")
 axs[0].legend()
@@ -52,3 +52,4 @@ axs[1].legend()
 plt.grid(False)
 plt.show()
 
+#Testing merge
