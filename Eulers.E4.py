@@ -41,12 +41,12 @@ x_calc, t_calc = sine(x0, t0)
 fig, ax = plt.subplots(1,2)
 for a in dt:
     x_vals, v_vals, t_vals = func(x0, v0, t0, t_max, a)
-    ax[0].plot(t_vals, x_vals, label="Euler dt={a}")
-    ax[1].plot(t_vals, v_vals, label="Euler dt={a}")
+    ax[0].plot(t_vals, x_vals, label=f"Euler dt={a}")
+    #ax[1].plot(t_vals, x_vals - x_calc, label=f"Euler dt={a}")
 
 ax[0].set_title("Euler's aproximation")
 ax[0].set_xlabel("time(s)")
 ax[0].set_ylabel("x(t)")     
-
+ax[0].legend()
 #ax[1].plot(t_calc, x_calc)
 plt.show()
